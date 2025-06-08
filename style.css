@@ -1,0 +1,97 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #dbe9f4, #ffffff);
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-top: 20px;
+  color: #222;
+}
+
+#info {
+  font-size: 1.2em;
+  margin: 10px 0;
+  color: #333;
+}
+
+#tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(8, 70px);
+  grid-template-rows: repeat(8, 70px);
+  margin: 30px auto;
+  width: fit-content;
+  border: 3px solid #444;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.casa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  font-size: 2.3em;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.branca {
+  background-color: #f0d9b5;
+}
+
+.preta {
+  background-color: #b58863;
+  color: white;
+}
+
+.casa:hover {
+  transform: scale(1.03);
+  z-index: 1;
+}
+
+.selecionada {
+  box-shadow: inset 0 0 0 4px red;
+  background-color: #ffe0e0 !important;
+}
+
+.movimento-valido {
+  background-color: #a3d9a5 !important;
+  box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+#promoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+#promoContent {
+  background: white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  text-align: center;
+}
+
+.promoOption {
+  font-size: 2.5em;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.promoOption:hover {
+  transform: scale(1.2);
+}
